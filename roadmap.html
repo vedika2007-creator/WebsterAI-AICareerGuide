@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebsterAI | Skill Roadmap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+  h1, h2, h3 {
+    font-family: 'Segoe UI', Arial, sans-serif !important;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<header>
+    <h1>WebsterAI</h1>
+    <p>AI Skill Roadmap Generator</p>
+</header>
+
+<div class="container">
+    <h2>Generate Your Skill Roadmap</h2>
+
+    <label for="education">Education Level</label>
+    <select id="education">
+        <option value=""disabled selected>Select Educational Level</option>
+        <option value="School">School</option>
+        <option value="Undergraduate">Undergraduate</option>
+        <option value="Postgraduate">Postgraduate</option>
+    </select>
+
+    <label for="experience">Experience Level</label>
+    <select id="experience">
+        <option value=""disabled selected>Select Experience Level</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+    </select>
+
+    <label for="goal">Career Goal</label>
+    <select id="goal">
+        <option value=""disabled selected>Select Interest Level</option>
+        <option value="AI">AI / ML Engineer</option>
+        <option value="Web">Web Developer</option>
+        <option value="Cyber">Cyber Security Analyst</option>
+        <option value="IoT">IoT Engineer</option>
+    </select>
+
+    <button onclick="generateRoadmap()">Generate Skill Roadmap</button>
+    <div id="roadmapResult" class="result-box"></div>
+
+    <button class="next-btn" onclick="window.location.href='profile.html'">Next → profile</button>
+</div>
+
+<script src="js/roadmap.js"></script>
+</body>
+</html>

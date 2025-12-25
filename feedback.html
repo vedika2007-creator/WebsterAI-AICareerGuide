@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebsterAI | Feedback</title>
+  <!-- Google Font Integration -->
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(to right, #2f96f7, hsl(187, 89%, 74%));
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px hsla(0, 1%, 31%, 0.906);
+    }
+
+    .container h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .container p {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #e2e8ff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    select, textarea {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    select option {
+      color: #000;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: #4504f8;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #1c04f8;
+      transform: translateY(-2px);
+    }
+
+    #message {
+      margin-top: 15px;
+      font-weight: 600;
+      text-align: center;
+      color: #00ff88;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>⭐ Rate & Share Feedback</h2>
+  <p>Your feedback helps us improve WebsterAI</p>
+
+  <label for="rating">Your Rating (1–5)</label>
+  <select id="rating">
+    <option value="">Select Rating</option>
+    <option value="1">1 - Poor</option>
+    <option value="2">2 - Fair</option>
+    <option value="3">3 - Good</option>
+    <option value="4">4 - Very Good</option>
+    <option value="5">5 - Excellent</option>
+  </select>
+
+  <label for="feedbackText">Write your feedback</label>
+  <textarea id="feedbackText" rows="4" placeholder="Share your experience with WebsterAI..."></textarea>
+
+  <button onclick="submitFeedback()">Submit Feedback</button>
+
+  <div id="message"></div>
+
+  <button onclick="window.location.href='index.html'">Back to Home</button>
+</div>
+
+<script>
+  // 🔹 Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBJ6XfIaMlIesHoZ6czxaNoupVD9b7__t0",
+    authDomain: "hackathon-7ffbd.firebaseapp.com",
+    databaseURL: "https://hackathon-7ffbd-default-rtdb.firebaseio.com", // ← Use the URL generated in your Firebase Realtime Database
+    projectId: "hackathon-7ffbd",
+    storageBucket: "hackathon-7ffbd.firebasestorage.app",
+    messagingSenderId: "644003582146",
+    appId: "1:644003582146:web:34a6d396d97c59e55deb5b"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  // 🔹 Submit Feedback Function
+  function submitFeedback() {
+    const rating = document.getElementById("rating").value;
+    const feedback = document.getElementById("feedbackText").value.trim();
+
+    if (!rating || !feedback) {
+      alert("Please provide both rating and feedback!");
+      return;
+    }
+
+    // Push to Firebase
+    const feedbackRef = database.ref("feedbacks");
+    const newFeedback = feedbackRef.push();
+    newFeedback.set({
+      rating: rating,
+      feedback: feedback,
+      timestamp: Date.now()
+    });
+
+    document.getElementById("message").innerText =
+      "✅ Thank you! Your feedback is saved to Firebase!";
+
+    // Reset form
+    document.getElementById("feedbackText").value = "";
+    document.getElementById("rating").value = "";
+  }
+</script>
+
+</body>
+</html>

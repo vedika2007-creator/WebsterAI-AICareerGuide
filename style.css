@@ -1,0 +1,436 @@
+/* ----------------------------
+General Reset & Font
+---------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #2f96f7, hsl(187, 89%, 74%)); /* blue gradient */
+    color: lab(4.31% 0 0);
+    min-height: 100vh;
+}
+
+/* ----------------------------
+Header
+---------------------------- */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(44, 164, 233, 0.897);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+header h1 {
+       font-family: 'Rye', Algerian; /* fancy script */
+    font-size: 4rem;
+    margin-bottom: 10px;
+
+
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color:#fff
+}
+
+/* ----------------------------
+Container
+---------------------------- */
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px hsla(0, 1%, 31%, 0.906);
+}
+
+/* ----------------------------
+Form Fields Vertical Layout
+---------------------------- */
+.container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.container input,
+.container select,
+.container textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.2);
+    color: #f4f6f7;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #f2f3f3;
+}
+
+/* ----------------------------
+Buttons
+---------------------------- */
+button, .next-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #4504f8;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover, .next-btn:hover {
+    background: #1c04f8;
+    transform: translateY(-2px);
+}
+
+/* ----------------------------
+Result Box
+---------------------------- */
+.result-box {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ----------------------------
+Chatbot Page
+---------------------------- */
+#chatContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#chatBox {
+    height: 300px;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.userMsg {
+    text-align: right;
+    color: #130494;
+    margin: 5px 0;
+}
+
+.aiMsg {
+    text-align: left;
+    color: #010714;
+    margin: 5px 0;
+}
+
+#chatInput {
+    width: calc(100% - 90px);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+#sendBtn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #1c04f7;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#sendBtn:hover {
+    background: #1d04fc;
+}
+/* Apply Poppins font to general body text and inputs/buttons */
+body, input, select, textarea, button, .next-btn {
+    font-family: 'Poppins', sans-serif;
+}
+/* Headings in Algerian style */
+header h1, .chat-box h1, .container h2 {
+    font-family: 'Algerian', 'Rye', cursive;
+}
+.btn-primary {
+    background:linera-gradient(135deg,#4d7bfa,#00c6ff);
+}
+.btn-primary:hover {
+    transform:scale(1.05);
+    box-shadow:0 0 15px #2645f7;
+}
+/* ================================
+   FEEDBACK PAGE BLACK THEME OVERRIDE
+   ================================ */
+
+/* Scope ONLY feedback page */
+body {
+    background: hsl(202, 100%, 51%) !important;
+    color: #01b6ec !important;
+}
+
+/* Main feedback container */
+.container {
+    background: #01c3d1 !important;
+    color: #03a4e4 !important;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Headings & text */
+.container h2,
+.container p,
+.container label {
+    color: #000 !important;
+}
+
+/* Dropdown, textarea */
+.container select,
+.container textarea {
+    background: #04d8e7 !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+/* Placeholder text */
+.container textarea::placeholder {
+    color: #333 !important;
+}
+
+/* ⭐ DO NOT TOUCH THESE BUTTONS */
+.container button {
+    background: initial;
+}
+
+/* Submit Feedback button */
+.container button:first-of-type {
+    background: linear-gradient(135deg, #4d7bfa, #00c6ff) !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 0 2px #4f7cff;
+}
+
+/* Back to Home button */
+.container button:last-of-type {
+    border: none;
+    outline: none;
+    box-shadow: inset 0 0 0 2px #4f7cff;
+    border-radius: 10px;;
+    background: linear-gradient(135deg, #03a8c5, #0298d3) !important;
+    color: #fff !important;
+
+}
+/* Success message */
+#message {
+    color: #000 !important;
+}
+/* Fix WebsterAI heading color explicitly */
+
+header h1,
+header h2,
+header p,
+.hero h1,
+.hero p {
+    color: #000000 !important;
+}
+/* ===============================
+   GLOBAL TEXT COLOR FIX – ALL PAGES
+   =============================== */
+
+/* Force all text to pure black */
+body,
+body * {
+    color: #000000;
+}
+
+/* Keep buttons readable (do NOT turn text black) */
+button,
+button *,
+.btn,
+.btn * {
+    color: #ffffff !important;
+}
+
+/* Inputs, selects, textarea text */
+input,
+select,
+textarea {
+    color: #000000 !important;
+}
+
+/* Placeholder text */
+input::placeholder,
+textarea::placeholder {
+    color: #444444 !important;
+}
+
+/* Headings clarity */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+/* Links */
+a {
+    color: #000000;
+}
+
+/* Keep disabled text readable */
+input:disabled,
+textarea:disabled {
+    color: #555555 !important;
+}
+/* Internship Recommendation Table Styling */
+
+.internship-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.internship-table th,
+.internship-table td {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px 8px;
+    text-align: left;
+}
+
+.internship-table th {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.internship-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.internship-table tr:hover {
+    background-color: rgba(37, 99, 235, 0.15);
+    transition: 0.2s ease;
+}
+#recommendation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#recommendation-table th, #recommendation-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+#recommendation-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#recommendation-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#recommendation-table tr:hover {
+  background-color: #ddd;
+}
+/* Center and style the main headings */
+.container h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #111827; /* dark color for professional look */
+}
+
+/* User Profile Box */
+#user-summary {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 40px auto; /* center and space from top and table */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings inside user profile */
+#user-summary h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Profile paragraph styling */
+#user-summary p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+/* Table title */
+h2 + table {
+    text-align: center;
+}
+
+/* Center the table container */
+#recommendation-table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+}
+
+/* Optional: Table styling (already added before) */
+#recommendation-table th, #recommendation-table td {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+}
+
+#recommendation-table th {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+}
+
+#recommendation-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#recommendation-table tr:hover {
+    background-color: #e0e0e0;
+}
+/* Table title styling */
+h2.table-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 30px 0 15px 0; /* 30px top, 15px bottom spacing from table */
+}
+
+/* Center the table */
+#recommendation-table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 40px auto; /* center and add bottom spacing */
+}

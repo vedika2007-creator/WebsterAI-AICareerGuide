@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebsterAI | Resume Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+  h1, h2, h3 {
+    font-family: 'Segoe UI', Arial, sans-serif !important;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<header>
+    <h1>WebsterAI</h1>
+    <p>AI Resume Analyzer & Feedback</p>
+</header>
+
+<div class="container">
+    <h2>Resume Analyzer</h2>
+    <label for="resumeFile">Upload Resume (PDF/DOC)</label>
+    <input type="file" id="resumeFile">
+
+    <button onclick="analyzeResume()">Analyze Resume</button>
+    <div id="resumeResult" class="result-box"></div>
+
+    <button class="next-btn" onclick="window.location.href='roadmap.html'">Next → Skill Roadmap</button>
+</div>
+
+<script src="js/resume.js"></script>
+</body>
+</html>

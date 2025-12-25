@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebsterAI | Internship Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>WebsterAI</h1>
+    <p>Internship Application Tracker & AI Planner</p>
+</header>
+
+<div class="container">
+    <h2>Internship Tracker</h2>
+
+    <label for="company">Company Name</label>
+    <input type="text" id="company" placeholder="Google, Microsoft">
+
+    <label for="applyDate">Application Date</label>
+    <input type="date" id="applyDate">
+
+    <label for="interviewDate">Interview / Deadline Date</label>
+    <input type="date" id="interviewDate">
+
+    <button onclick="trackInternship()">Track Internship</button>
+    <div id="trackerResult" class="result-box"></div>
+
+    <button class="next-btn" onclick="window.location.href='chatbot.html'">Next → Ask AI Chatbot</button>
+</div>
+
+<script src="js/tracker.js"></script>
+</body>
+</html>
